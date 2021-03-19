@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Food consumption on</h1> 
+<h3>Food summary</h3> 
 
 <p>
     <a asp-action="Create">Add Food</a>
@@ -20,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Serving)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CaloriesPerServing)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TotalCalories)
@@ -80,9 +77,6 @@
                     @Html.DisplayFor(modelItem => item.Serving)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CaloriesPerServing)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.TotalCalories)
                 </td>
                 <td>
@@ -131,8 +125,97 @@
     </tbody>
 </table>
 
-<table>
 
+<h3>Total nutritional summary</h3> 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCalories)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Protein)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carbohydrates)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fibre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sugars)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sodium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Potassium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cholesterol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VitaminA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VitaminC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calcium)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.First().Date
+            </td>
+                <td>
+                    @Model.Sum(i => i.TotalCalories)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Protein)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Carbohydrates)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Fat)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Fibre)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Sugars)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Sodium)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Potassium)
+                </td>
+                <td>
+                    @Model.Sum(i => i.Cholesterol)
+                </td>
+                <td>
+                    @Model.Sum(i => i.VitaminA)
+                </td>
+                <td>
+                    @Model.Sum(i => i.VitaminC)
+                </td>
+                <td>
+                    @Model.Sum(i => i.VitaminA)
+                </td>
+                
+            </tr>
+    </tbody>
 </table>
 
 <div>
