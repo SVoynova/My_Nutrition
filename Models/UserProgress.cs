@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyNutritionApp.Models
 {
-    public class User
+    public class UserProgress
     {
         /// <summary>
         /// ID of user
@@ -14,16 +16,28 @@ namespace MyNutritionApp.Models
             set { id = value; }
         }
 
-        /// <summary>
-        /// User's name
-        /// </summary>
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
+        [Required(ErrorMessage = "Please upload a progress photo!")]
+        [Display(Name = "Profile Picture")]
+        public IFormFile ProgressPhoto
+        { 
+            get; 
+            set; 
         }
 
+
+        [Required(ErrorMessage = "Please enter date!")]
+
+        /// <summary>
+        /// The date of the progress check
+        /// </summary>
+        public DateTime Date
+        {
+            get;
+            set;
+        }
+
+
+        [Required(ErrorMessage = "Please enter your sex!")]
         /// <summary>
         /// User's sex
         /// </summary>
@@ -34,6 +48,7 @@ namespace MyNutritionApp.Models
             set { sex = value; }
         }
 
+        [Required(ErrorMessage = "Please enter your age!")]
         /// <summary>
         /// User's age
         /// </summary>
@@ -44,6 +59,7 @@ namespace MyNutritionApp.Models
             set { age = value; }
         }
 
+        [Required(ErrorMessage = "Please enter your height!")]
         /// <summary>
         /// User's height
         /// </summary>
@@ -54,6 +70,8 @@ namespace MyNutritionApp.Models
             set { height = value; }
         }
 
+
+        [Required(ErrorMessage = "Please enter your current weight!")]
         /// <summary>
         /// User's current weight
         /// </summary>
@@ -64,6 +82,7 @@ namespace MyNutritionApp.Models
             set { currentWeight = value; }
         }
 
+        [Required(ErrorMessage = "Please enter your goal weight!")]
         /// <summary>
         /// User's goal weight
         /// </summary>
@@ -75,6 +94,8 @@ namespace MyNutritionApp.Models
             set { goalWeight = value; }
         }
 
+
+        [Required(ErrorMessage = "Please select your activity level!")]
         /// <summary>
         /// User's activity level
         /// </summary>
@@ -86,6 +107,7 @@ namespace MyNutritionApp.Models
         }
 
 
+        [Required(ErrorMessage = "Please select the desired plan!")]
         /// <summary>
         /// User's preference on the intensity of the plan
         /// </summary>
@@ -374,7 +396,7 @@ namespace MyNutritionApp.Models
             }
         }
 
-        public User()
+        public UserProgress()
         {
         
         }
