@@ -1,0 +1,175 @@
+﻿@model MyNutritionApp.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<center>
+    <h1>Details</h1>
+</center>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Name
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-3">
+            Sex
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Sex)
+        </dd>
+        <dt class="col-sm-3">
+            Age
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class="col-sm-3">
+            Height
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt class="col-sm-3">
+            Current weight
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CurrentWeight)
+        </dd>
+        <dt class="col-sm-3">
+            Goal weight
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.GoalWeight)
+        </dd>
+        <dt class="col-sm-3">
+            Activity level
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ActivityLevel)
+
+        <dt class="col-sm-3">
+            Intensity of the plan
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IntensityOfThePlan)
+        </dd>
+        <dt class="col-sm-3">
+            Basal Metabolic Rate (BMR)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.BMR)
+        </dd>
+        <dt id="imp" class="col-sm-3">
+            Daily calorie needs
+        </dt>
+        <dd id="imp" class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyCalorieNeeds)
+        </dd>
+        <dt class="col-sm-3">
+            Carbohydrates percentage
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CarbohydratesPercentage)
+        </dd>
+        <dt class="col-sm-3">
+            Carbohydrates
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Carbohydrates)
+        </dd>
+        <dt class="col-sm-3">
+            Protein percentage
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ProteinPercentage)
+        </dd>
+        <dt id="imp" class="col-sm-3">
+            Protein
+        </dt>
+        <dd id="imp"class="col-sm-9">
+            @Html.DisplayFor(model => model.Protein)
+        </dd>
+        <dt class="col-sm-3">
+            Fat percentage
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.FatPercentage)
+        </dd>
+        <dt id="imp" class="col-sm-3">
+            Fats
+        </dt>
+        <dd id="imp" class="col-sm-9">
+            @Html.DisplayFor(model => model.Fats)
+        </dd>
+        <dt class="col-sm-3">
+            Daily fibre
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyFibre)
+        </dd>
+        <dt id="imp" class="col-sm-3">
+            Daily sugars
+        </dt>
+        <dd id="imp" class="col-sm-9">
+            @Html.DisplayFor(model => model.DailySugars)
+        </dd>
+        <dt class="col-sm-3">
+            Daily sodium
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DailySodium)
+        </dd>
+        <dt class="col-sm-3">
+            Daily potassium
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyPotassium)
+        </dd>
+        <dt id="imp" class="col-sm-3">
+            Daily cholesterol
+        </dt>
+        <dd id="imp" class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyCholesterol)
+        </dd>
+        <dt class="col-sm-3">
+            Daily vitamin A
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyVitaminA)
+        </dd>
+        <dt class="col-sm-3">
+            Daily vitamin C
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyVitaminC)
+        </dd>
+        <dt class="col-sm-3">
+            Daily calcium
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyCalcium)
+        </dd>
+        <dt id="imp" class="col-sm-3">
+            Daily water
+        </dt>
+        <dd id="imp" class="col-sm-9">
+            @Html.DisplayFor(model => model.DailyWater)
+        </dd>
+    </dl>
+
+    <style>
+        #imp {
+            color: dodgerblue;
+        }
+    </style>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
