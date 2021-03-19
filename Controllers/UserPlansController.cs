@@ -12,12 +12,12 @@ using System.Net.Http.Headers;
 
 namespace My_Nutrition.Controllers
 {
-    public class UserProgressController : Controller
+    public class UserPlansController : Controller
     {
         private readonly ApplicationDbContext _context;
         private object webHostEnvironment;
 
-        public UserProgressController(ApplicationDbContext context)
+        public UserPlansController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -59,7 +59,7 @@ namespace My_Nutrition.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserProgress user)
+        public async Task<IActionResult> Create([Bind("Id,Date,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserPlan user)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace My_Nutrition.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserProgress user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserPlan user)
         {
             if (id != user.Id)
             {
