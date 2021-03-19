@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using My_Nutrition.Data;
 using MyNutritionApp.Models;
+using My_Nutrition.Data;
+using System.IO;
 
 namespace My_Nutrition.Controllers
 {
-    public class UsersController : Controller
+    public class UserProgressController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private object webHostEnvironment;
 
-        public UsersController(ApplicationDbContext context)
+        public UserProgressController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -45,17 +46,19 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: Users/Create
-        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
+
+
         // POST: Users/Create
-        [Authorize]
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,BMR,IntensityOfThePlan,DailyCalorieNeeds,CarbohydratesPercentage,Carbohydrates,ProteinPercentage,Protein,FatPercentage,Fats,DailyFibre,DailySugars,DailySodium,DailyPotassium,DailyCholesterol,DailyVitaminA,DailyVitaminC,DailyCalcium,DailyWater")] User user)
+        public async Task<IActionResult> Create([Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserProgress user)
         {
             if (ModelState.IsValid)
             {
@@ -66,8 +69,8 @@ namespace My_Nutrition.Controllers
             return View(user);
         }
 
+
         // GET: Users/Edit/5
-        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,10 +87,11 @@ namespace My_Nutrition.Controllers
         }
 
         // POST: Users/Edit/5
-        [Authorize]
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,BMR,IntensityOfThePlan,DailyCalorieNeeds,CarbohydratesPercentage,Carbohydrates,ProteinPercentage,Protein,FatPercentage,Fats,DailyFibre,DailySugars,DailySodium,DailyPotassium,DailyCholesterol,DailyVitaminA,DailyVitaminC,DailyCalcium,DailyWater")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserProgress user)
         {
             if (id != user.Id)
             {
@@ -118,7 +122,6 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: Users/Delete/5
-        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,7 +140,6 @@ namespace My_Nutrition.Controllers
         }
 
         // POST: Users/Delete/5
-        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
