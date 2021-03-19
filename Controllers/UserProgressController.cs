@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using MyNutritionApp.Models;
 using My_Nutrition.Data;
 using System.IO;
+using System.Net.Http.Headers;
 
 namespace My_Nutrition.Controllers
 {
@@ -58,7 +59,7 @@ namespace My_Nutrition.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserProgress user)
+        public async Task<IActionResult> Create([Bind("Id,Date,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserProgress user)
         {
             if (ModelState.IsValid)
             {

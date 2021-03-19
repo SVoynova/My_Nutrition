@@ -31,11 +31,12 @@ namespace My_Nutrition.Controllers
             return View();
         }
 
-        // Post: FoodModels/ShowSearchResults
+        // Post: FoodModels/ShowSearchForm/ShowSearchResults
         public async Task<IActionResult> ShowSearchResults(DateTime SearchDate)
         {
             return View("DailySummary", await _context.FoodModel.Where(j => j.Date.Date.Equals(SearchDate)).ToListAsync());
         }
+
 
         // GET: FoodModels/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -71,6 +72,7 @@ namespace My_Nutrition.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(foodModel);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

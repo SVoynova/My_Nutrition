@@ -16,16 +16,8 @@ namespace MyNutritionApp.Models
             set { id = value; }
         }
 
-        [Required(ErrorMessage = "Please upload a progress photo!")]
-        [Display(Name = "Profile Picture")]
-        public IFormFile ProgressPhoto
-        { 
-            get; 
-            set; 
-        }
 
-
-        [Required(ErrorMessage = "Please enter date!")]
+        [Required(ErrorMessage = "Please enter a date!")]
 
         /// <summary>
         /// The date of the progress check

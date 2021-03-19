@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using My_Nutrition.Data;
 
 namespace My_Nutrition.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210319133026_secondary setup")]
+    partial class secondarysetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -226,35 +228,35 @@ namespace My_Nutrition.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Calcium")
-                        .HasColumnType("float");
+                    b.Property<int>("Calcium")
+                        .HasColumnType("int");
 
                     b.Property<int>("CaloriesPerServing")
                         .HasColumnType("int");
 
-                    b.Property<double>("Carbohydrates")
-                        .HasColumnType("float");
+                    b.Property<int>("Carbohydrates")
+                        .HasColumnType("int");
 
-                    b.Property<double>("Cholesterol")
-                        .HasColumnType("float");
+                    b.Property<int>("Cholesterol")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Fat")
-                        .HasColumnType("float");
+                    b.Property<int>("Fat")
+                        .HasColumnType("int");
 
-                    b.Property<double>("Fibre")
-                        .HasColumnType("float");
+                    b.Property<int>("Fibre")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Potassium")
-                        .HasColumnType("float");
+                    b.Property<int>("Potassium")
+                        .HasColumnType("int");
 
-                    b.Property<double>("Protein")
-                        .HasColumnType("float");
+                    b.Property<int>("Protein")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -262,20 +264,20 @@ namespace My_Nutrition.Data.Migrations
                     b.Property<string>("Serving")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Sodium")
-                        .HasColumnType("float");
+                    b.Property<int>("Sodium")
+                        .HasColumnType("int");
 
-                    b.Property<double>("Sugars")
-                        .HasColumnType("float");
+                    b.Property<int>("Sugars")
+                        .HasColumnType("int");
 
                     b.Property<int>("TotalCalories")
                         .HasColumnType("int");
 
-                    b.Property<double>("VitaminA")
-                        .HasColumnType("float");
+                    b.Property<int>("VitaminA")
+                        .HasColumnType("int");
 
-                    b.Property<double>("VitaminC")
-                        .HasColumnType("float");
+                    b.Property<int>("VitaminC")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

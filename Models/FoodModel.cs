@@ -46,72 +46,72 @@ namespace MyNutritionApp.Models
             set;
         }
 
-        public int Protein
+        public double Protein
         {
             get;
             set;
         }
-        public int Carbohydrates
-        {
-            get;
-            set;
-        }
-
-        public int Fat
+        public double Carbohydrates
         {
             get;
             set;
         }
 
-        public int Fibre
+        public double Fat
         {
             get;
             set;
         }
 
-
-        public int Sugars
-        {
-            get;
-            set;
-        }
-
-        public int Sodium
+        public double Fibre
         {
             get;
             set;
         }
 
 
-        public int Potassium
+        public double Sugars
+        {
+            get;
+            set;
+        }
+
+        public double Sodium
         {
             get;
             set;
         }
 
 
-        public int Cholesterol
+        public double Potassium
         {
             get;
             set;
         }
 
 
-        public int VitaminA
+        public double Cholesterol
         {
             get;
             set;
         }
 
-        
-        public int VitaminC
+
+        public double VitaminA
         {
             get;
             set;
         }
 
         
-        public int Calcium
+        public double VitaminC
+        {
+            get;
+            set;
+        }
+
+        
+        public double Calcium
         {
             get;
             set;
