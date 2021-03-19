@@ -9,11 +9,10 @@ namespace MyNutritionApp.Models
         /// <summary>
         /// ID of user
         /// </summary>
-        private int id;
         public int Id
         {
-            get { return id; }
-            set { id = value; }
+            get;
+            set;
         }
 
 
