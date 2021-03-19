@@ -1,0 +1,153 @@
+﻿@model IEnumerable<My_Nutrition.Models.UserProgress>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaistMeasurements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArmMeasurements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LegMeasurements)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WaistMeasurements)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArmMeasurements)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LegMeasurements)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Your progress from the beggining to now</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Time period
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaistMeasurements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArmMeasurements)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LegMeasurements)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tbody>
+        <tr>
+            <td>
+                @{
+                    var days = Model.Last().Date - Model.First().Date;
+
+                }
+                @days.Days days
+            </td>
+            <td>
+                @{
+
+                    var weight = Model.Last().Weight - Model.First().Weight;
+                    char sign = '-';
+                    if (weight > 0) { sign = '+'; }
+                    else
+                    {
+                        weight = weight * (-1);
+                    }
+                }
+                @sign @weight kg
+            </td>
+            <td>
+                @{
+
+                    var waist = Model.Last().WaistMeasurements - Model.First().WaistMeasurements;
+                    if (waist > 0) { sign = '+'; }
+                    else
+                    {
+                        waist = waist * (-1);
+                        sign = '-';
+                    }
+                }
+                @sign @waist cm
+            </td>
+            <td>
+                @{
+
+                    var arm = Model.Last().ArmMeasurements - Model.First().ArmMeasurements;
+                    if (arm > 0) { sign = '+'; }
+                    else
+                    {
+                        arm = arm * (-1);
+                        sign = '-';
+                    }
+                }
+                @sign @arm cm
+            </td>
+            <td>
+                @{
+
+                    var leg = Model.Last().LegMeasurements - Model.First().LegMeasurements;
+
+                    if (leg > 0) { sign = '+'; }
+                    else
+                    {
+                        leg = leg * (-1);
+                        sign = '-';
+                    }
+                }
+
+                @sign @leg cm
+            </td>
+    </tbody>
+</table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
