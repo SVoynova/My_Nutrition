@@ -34,7 +34,7 @@ namespace My_Nutrition.Controllers
         // Post: FoodModels/ShowSearchResults
         public async Task<IActionResult> ShowSearchResults(DateTime SearchDate)
         {
-            return View("Index", await _context.FoodModel.Where(j => j.Date.Equals(SearchDate)).ToListAsync());
+            return View("DailySummary", await _context.FoodModel.Where(j => j.Date.Date.Equals(SearchDate)).ToListAsync());
         }
 
         // GET: FoodModels/Details/5
