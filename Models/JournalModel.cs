@@ -7,7 +7,6 @@ namespace My_Nutrition.Models
 {
     public class JournalModel
     {
-
         public int Id { get; set; }
 
         public DateTime Date { get; set; }
