@@ -37,7 +37,6 @@ namespace MyNutritionApp.Models
         public int TotalCalories
         {
             get { return CaloriesPerServing * Quantity; }
-            set { }
         }
 
         public int Quantity

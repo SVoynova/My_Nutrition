@@ -66,13 +66,13 @@ namespace My_Nutrition.Controllers
         }
 
         // POST: FoodModels/Create
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Date,Name,Serving,CaloriesPerServing,TotalCalories,Quantity,Protein,Carbohydrates,Fat,Fibre,Sugars,Sodium,Potassium,Cholesterol,VitaminA,VitaminC,Calcium")] FoodModel foodModel)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(foodModel);
-
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
