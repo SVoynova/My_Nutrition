@@ -9,6 +9,7 @@ using MyNutritionApp.Models;
 using My_Nutrition.Data;
 using System.IO;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace My_Nutrition.Controllers
 {
@@ -29,6 +30,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: Users/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,6 +49,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: Users/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -55,8 +58,6 @@ namespace My_Nutrition.Controllers
 
 
         // POST: Users/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Date,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserPlan user)
@@ -72,6 +73,7 @@ namespace My_Nutrition.Controllers
 
 
         // GET: Users/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -88,8 +90,6 @@ namespace My_Nutrition.Controllers
         }
 
         // POST: Users/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Sex,Age,Height,CurrentWeight,GoalWeight,ActivityLevel,IntensityOfThePlan,DailyVitaminA")] UserPlan user)
@@ -123,6 +123,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: Users/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

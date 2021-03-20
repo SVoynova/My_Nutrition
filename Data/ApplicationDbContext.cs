@@ -13,6 +13,7 @@ namespace My_Nutrition.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
         public DbSet<MyNutritionApp.Models.FoodModel> FoodModel { get; set; }
         public DbSet<MyNutritionApp.Models.UserPlan> User { get; set; }

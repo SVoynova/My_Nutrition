@@ -13,55 +13,89 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                <center>
+                    Date
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <center>
+                    Name
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Serving)
+                <center>
+                    Serving
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CaloriesPerServing)
+                <center>
+                    Calories per serving
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalCalories)
+                <center>
+                    Total calories
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
+                <center>
+                    Quantity
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Protein)
+                <center>
+                    Protein
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Carbohydrates)
+                <center>
+                    Carbohydrates
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fat)
+                <center>
+                    Fat
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fibre)
+                <center>
+                    Fibre
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sugars)
+                <center>
+                    Sugars
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sodium)
+                <center>
+                    Sodium
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Potassium)
+                <center>
+                    Patassium
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cholesterol)
+                <center>
+                    VitaminA
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VitaminA)
+                <center>
+                    Vitamin A
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.VitaminC)
+                <center>
+                    Vitamin C
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Calcium)
+                <center>
+                    Calcium
+                </center>
             </th>
             <th></th>
         </tr>
@@ -70,60 +104,94 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Serving)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Serving)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CaloriesPerServing)
+                <center>
+                    @Html.DisplayFor(modelItem => item.CaloriesPerServing)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalCalories)
+                <center>
+                    @Html.DisplayFor(modelItem => item.TotalCalories)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Protein)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Protein)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Carbohydrates)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Carbohydrates)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fat)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Fat)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fibre)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Fibre)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sugars)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Sugars)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Sodium)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Sodium)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Potassium)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Potassium)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cholesterol)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Cholesterol)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VitaminA)
+                <center>
+                    @Html.DisplayFor(modelItem => item.VitaminA)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VitaminC)
+                <center>
+                    @Html.DisplayFor(modelItem => item.VitaminC)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Calcium)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Calcium)
+                </center>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

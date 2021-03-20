@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: JournalModels/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,14 +46,13 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: JournalModels/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: JournalModels/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Date,Thoughts,Gratitudes,Concerns,Questions")] JournalModel journalModel)
@@ -66,6 +67,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: JournalModels/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,8 +84,6 @@ namespace My_Nutrition.Controllers
         }
 
         // POST: JournalModels/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Thoughts,Gratitudes,Concerns,Questions")] JournalModel journalModel)
@@ -117,6 +117,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: JournalModels/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

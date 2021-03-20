@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyNutritionApp.Models;
 using My_Nutrition.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace My_Nutrition.Controllers
 {
@@ -39,6 +40,7 @@ namespace My_Nutrition.Controllers
 
 
         // GET: FoodModels/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -57,15 +59,13 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: FoodModels/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: FoodModels/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Date,Name,Serving,CaloriesPerServing,TotalCalories,Quantity,Protein,Carbohydrates,Fat,Fibre,Sugars,Sodium,Potassium,Cholesterol,VitaminA,VitaminC,Calcium")] FoodModel foodModel)
         {
@@ -80,6 +80,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: FoodModels/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,8 +97,6 @@ namespace My_Nutrition.Controllers
         }
 
         // POST: FoodModels/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Name,Serving,CaloriesPerServing,TotalCalories,Quantity,Protein,Carbohydrates,Fat,Fibre,Sugars,Sodium,Potassium,Cholesterol,VitaminA,VitaminC,Calcium")] FoodModel foodModel)
@@ -131,6 +130,7 @@ namespace My_Nutrition.Controllers
         }
 
         // GET: FoodModels/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
