@@ -18,5 +18,6 @@ namespace My_Nutrition.Data
         public DbSet<MyNutritionApp.Models.FoodModel> FoodModel { get; set; }
         public DbSet<MyNutritionApp.Models.UserPlan> User { get; set; }
         public DbSet<My_Nutrition.Models.JournalModel> JournalModel { get; set; }
+        public DbSet<My_Nutrition.Models.UserProgress> UserProgress { get; set; }
     }
 }
