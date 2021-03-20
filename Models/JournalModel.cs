@@ -1,27 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace My_Nutrition.Models
 {
     public class JournalModel
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// ID of journal entry
+        /// </summary>
+        public int Id 
+        { 
+            get;
+            set; 
+        }
 
-        public DateTime Date { get; set; }
+        /// <summary>
+        /// The data on wich the enty is made
+        /// </summary>
+        public DateTime Date 
+        { 
+            get; 
+            set;
+        }
 
-        public string Thoughts { get; set; }
+        /// <summary>
+        /// The user can write down his thoughts
+        /// </summary>
+        public string Thoughts 
+        { 
+            get; 
+            set; 
+        }
 
-        public string Gratitudes { get; set; }
+        /// <summary>
+        /// The user can expresses his gratitudes
+        /// </summary>
+        public string Gratitudes 
+        { 
+            get;
+            set; 
+        }
 
-        public string Concerns { get; set; }
+        /// <summary>
+        /// The user can share his concerns
+        /// </summary>
+        public string Concerns 
+        { 
+            get;
+            set;
+        }
 
-        public string Questions { get; set; }
+        /// <summary>
+        /// The user can ask questions
+        /// </summary>
+        public string Questions 
+        { 
+            get;
+            set;
+        }
 
+        /// <summary>
+        /// Constructor for the class JournalModel
+        /// </summary>
         public JournalModel()
         {
-        
+
         }
     }
 }

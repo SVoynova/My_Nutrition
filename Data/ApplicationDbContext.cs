@@ -1,10 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using MyNutritionApp.Models;
-using My_Nutrition.Models;
 
 namespace My_Nutrition.Data
 {

@@ -7,14 +7,13 @@ namespace MyNutritionApp.Models
     public class UserPlan
     {
         /// <summary>
-        /// ID of user
+        /// ID of the user
         /// </summary>
         public int Id
         {
             get;
             set;
         }
-
 
         //[Required(ErrorMessage = "Please enter a date!")]
 
@@ -113,7 +112,7 @@ namespace MyNutritionApp.Models
         /// </summary>
         public int BMR
         {
-            get 
+            get
             {
                 int sexCoefficent = 0;
                 switch (sex)
@@ -140,14 +139,14 @@ namespace MyNutritionApp.Models
                     case "Lightly active": activityCoefficient = 1.375; break;
                     case "Moderately active": activityCoefficient = 1.55; break;
                     case "Very active": activityCoefficient = 1.725; break;
-                    case "Extra active": activityCoefficient = 1.9; break; 
+                    case "Extra active": activityCoefficient = 1.9; break;
                 }
 
                 int caloriesToReachGoal = 0;
                 switch (intensityOfThePlan)
                 {
                     case "Lose 0.5kg per week": caloriesToReachGoal = -500; break;
-                    case "Lose 1kg per week": caloriesToReachGoal= -1000; break;
+                    case "Lose 1kg per week": caloriesToReachGoal = -1000; break;
                     case "Maintain current weight": caloriesToReachGoal = 0; break;
                     case "Gain 0.5kg per week": caloriesToReachGoal = 500; break;
                     case "Gain 1kg per week": caloriesToReachGoal = 1000; break;
@@ -173,7 +172,7 @@ namespace MyNutritionApp.Models
         /// </summary>
         public int CarbohydratesPercentage
         {
-            
+
             get
             {
                 return 50;
@@ -196,8 +195,8 @@ namespace MyNutritionApp.Models
         /// </summary>
         public int ProteinPercentage
         {
-            get 
-            { 
+            get
+            {
                 return 25;
             }
         }
@@ -217,8 +216,8 @@ namespace MyNutritionApp.Models
         /// </summary>
         public int FatPercentage
         {
-            get 
-            { 
+            get
+            {
                 return 25;
             }
         }
@@ -243,7 +242,7 @@ namespace MyNutritionApp.Models
 
         public int DailyFibre
         {
-            get 
+            get
             {
                 dailyFibre = (int)Math.Ceiling(DailyCalorieNeeds * 0.014);
                 return dailyFibre;
@@ -253,42 +252,39 @@ namespace MyNutritionApp.Models
         /// <summary>
         /// The daily sugar intake in grams, based on gender
         /// </summary>
-
         public int DailySugars
         {
-            get 
+            get
             {
                 switch (sex)
                 {
-                    case "female": return 24; 
+                    case "female": return 24;
                     case "male": return 36;
                 }
                 return 0;
             }
-            
+
         }
 
         /// <summary>
         /// The daily consumption of sodium in milligrams
         /// </summary>
-
         public double DailySodium
         {
-            get 
+            get
             {
-                return 2300; 
+                return 2300;
             }
         }
 
         /// <summary>
         /// The daily consumption of potassium in milligrams
         /// </summary>
-        
         public double DailyPotassium
         {
-            get 
-            { 
-                return 3500; 
+            get
+            {
+                return 3500;
             }
         }
 
@@ -297,19 +293,18 @@ namespace MyNutritionApp.Models
         /// </summary>
         public double DailyCholesterol
         {
-            get 
-            { 
-                return 300; 
+            get
+            {
+                return 300;
             }
         }
 
         /// <summary>
         /// The daily consumption of vitamin A in milligrams, based on the sex of the user
         /// </summary>
-        
         public double DailyVitaminA
         {
-            get 
+            get
             {
                 switch (sex)
                 {
@@ -318,17 +313,15 @@ namespace MyNutritionApp.Models
                 }
                 return 0;
             }
-            
+
         }
 
         /// <summary>
         /// The daily consumption of vitamin C in milligrams, based on the sex of the user
         /// </summary>
-        //private double dailyVitaminC;
-
         public double DailyVitaminC
         {
-            get 
+            get
             {
                 if (age > 16)
                 {
@@ -339,19 +332,18 @@ namespace MyNutritionApp.Models
                     }
                 }
                 return 55;
-                    
+
             }
         }
 
         /// <summary>
-        /// The daily consumption of calcium A in grams
+        /// The daily consumption of calcium in grams
         /// </summary>
-
         public double DailyCalcium
         {
-            get 
-            { 
-                return 600; 
+            get
+            {
+                return 600;
             }
         }
 
@@ -360,15 +352,18 @@ namespace MyNutritionApp.Models
         /// </summary>
         public double DailyWater
         {
-            get 
+            get
             {
                 return Math.Round(0.033 * CurrentWeight, 2);
             }
         }
 
+        /// <summary>
+        /// Constructor for the class UserPlan
+        /// </summary>
         public UserPlan()
         {
-        
+
         }
     }
 }

@@ -1,5 +1,3 @@
-using System;
-
 namespace My_Nutrition.Models
 {
     public class ErrorViewModel

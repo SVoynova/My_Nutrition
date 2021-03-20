@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Your progress</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,19 +13,29 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                <center>
+                    @Html.DisplayNameFor(model => model.Date)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Weight)
+                <center>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.WaistMeasurements)
+                <center>
+                    Waist measurements
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArmMeasurements)
+                <center>
+                    Arm measurements
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LegMeasurements)
+                <center>
+                    Leg measurements
+                </center>
             </th>
             <th></th>
         </tr>
@@ -35,19 +45,29 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Date)
+                    <center>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </center>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
+                    <center>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </center>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.WaistMeasurements)
+                    <center>
+                        @Html.DisplayFor(modelItem => item.WaistMeasurements)
+                    </center>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ArmMeasurements)
+                    <center>
+                        @Html.DisplayFor(modelItem => item.ArmMeasurements)
+                    </center>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.LegMeasurements)
+                    <center>
+                        @Html.DisplayFor(modelItem => item.LegMeasurements)
+                    </center>
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -58,57 +78,89 @@
         }
     </tbody>
 </table>
+<br>
 
+@if ( Model.Count()>=2) { 
 <h3>Your progress from the beggining to now</h3>
+<br>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Time period
+                <center>
+                    Time period
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Weight)
+                <center>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.WaistMeasurements)
+                <center>
+                    @Html.DisplayNameFor(model => model.WaistMeasurements)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArmMeasurements)
+                <center>
+                    @Html.DisplayNameFor(model => model.ArmMeasurements)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LegMeasurements)
+                <center>
+                    @Html.DisplayNameFor(model => model.LegMeasurements)
+                </center>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-    <tbody>
         <tr>
             <td>
-                @{
-                    var days = Model.Last().Date - Model.First().Date;
+                <center>
+                    @{
+                        var days = Model.Last().Date - Model.First().Date;
 
-                }
-                @days.Days days
-            </td>
-            <td>
-                @{
-
-                    var weight = Model.Last().Weight - Model.First().Weight;
-                    char sign = '-';
-                    if (weight > 0) { sign = '+'; }
-                    else
-                    {
-                        weight = weight * (-1);
                     }
-                }
-                @sign @weight kg
+                    @days.Days days
+                </center>
             </td>
             <td>
+                <center>
+                    @{
+
+                        var weight = Model.Last().Weight - Model.First().Weight;
+                        char sign = '-';
+                        if (weight == 0)
+                        {
+                            sign = ' ';
+                        }
+                        else if (weight > 0)
+                        {
+                            sign = '+';
+                        }
+                        else
+                        {
+                            weight = weight * (-1);
+                        }
+                    }
+                    @sign @weight kg
+                </center>
+            </td>
+            <td>
+                <center>
                 @{
 
                     var waist = Model.Last().WaistMeasurements - Model.First().WaistMeasurements;
-                    if (waist > 0) { sign = '+'; }
+
+                    if (waist == 0)
+                    {
+                        sign = ' ';
+                    }
+                    else if (waist > 0)
+                    {
+                        sign = '+';
+                    }
                     else
                     {
                         waist = waist * (-1);
@@ -116,37 +168,57 @@
                     }
                 }
                 @sign @waist cm
+                </center>
             </td>
             <td>
-                @{
+                <center>
+                    @{
 
-                    var arm = Model.Last().ArmMeasurements - Model.First().ArmMeasurements;
-                    if (arm > 0) { sign = '+'; }
-                    else
-                    {
-                        arm = arm * (-1);
-                        sign = '-';
+                        var arm = Model.Last().ArmMeasurements - Model.First().ArmMeasurements;
+
+                        if (arm == 0)
+                        {
+                            sign = ' ';
+                        }
+                        else if (arm > 0)
+                        {
+                            sign = '+';
+                        }
+                        else
+                        {
+                            arm = arm * (-1);
+                            sign = '-';
+                        }
                     }
-                }
-                @sign @arm cm
+                    @sign @arm cm
+                </center>
             </td>
             <td>
-                @{
+                <center>
+                    @{
 
-                    var leg = Model.Last().LegMeasurements - Model.First().LegMeasurements;
+                        var leg = Model.Last().LegMeasurements - Model.First().LegMeasurements;
 
-                    if (leg > 0) { sign = '+'; }
-                    else
-                    {
-                        leg = leg * (-1);
-                        sign = '-';
+                        if (leg == 0)
+                        {
+                            sign = ' ';
+                        }
+                        else if (leg > 0)
+                        {
+                            sign = '+';
+                        }
+                        else
+                        {
+                            leg = leg * (-1);
+                            sign = '-';
+                        }
                     }
-                }
 
-                @sign @leg cm
+                    @sign @leg cm
+                </center>
             </td>
     </tbody>
-</table>
+</table>}
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
