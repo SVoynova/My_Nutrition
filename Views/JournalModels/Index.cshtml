@@ -13,19 +13,29 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Date)
+                <center>
+                    @Html.DisplayNameFor(model => model.Date)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Thoughts)
+                <center>
+                    @Html.DisplayNameFor(model => model.Thoughts)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Gratitudes)
+                <center>
+                    @Html.DisplayNameFor(model => model.Gratitudes)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Concerns)
+                <center>
+                    @Html.DisplayNameFor(model => model.Concerns)
+                </center>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Questions)
+                <center>
+                    @Html.DisplayNameFor(model => model.Questions)
+                </center>
             </th>
             <th></th>
         </tr>
@@ -34,19 +44,29 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Thoughts)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Thoughts)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Gratitudes)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Gratitudes)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Concerns)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Concerns)
+                </center>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Questions)
+                <center>
+                    @Html.DisplayFor(modelItem => item.Questions)
+                </center>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
